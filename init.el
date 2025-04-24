@@ -60,17 +60,3 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
-
-;; CUSTOM
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory "~/Documents/orgVault")
-  (org-roam-completion-everywhere t)
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-	 ("C-c n f" . org-roam-node-find)
-	 ("C-c n i" . org-roam-node-insert)
-	 :map org-mode-map
-	 ("C-M-i"   . completion-at-point))
-  :config
-  (org-roam-setup))
