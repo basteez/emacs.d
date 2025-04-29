@@ -1,0 +1,79 @@
+#+title: Guide: Using Emacs like Logseq
+#+author: Tiziano Basile
+#+date: <2025-04-29 Tue>
+#+options: toc:nil
+
+* 📁 Knowledge Base Structure
+All your files are saved in ~~/Documents/org-roam~~:
+
+- ~daily/~ → Daily notes (journaling)
+- ~inbox.org~ → Tasks, ideas, quick notes
+- ~reading.org~ → Reading notes
+- ~meetings.org~ → Appointments (in datetree)
+- ~projects/~ → Notes for specific projects
+- ~people/~ → Info about people/contacts
+- ~zettels/~ → Abstract concepts, connected ideas
+- ~templates/~ → Optional templates
+
+* ✍️ Content Creation
+
+| Action                  | Command           |
+|-------------------------+-------------------|
+| Daily note              | ~C-c n j~         |
+| Create linked note      | ~C-c n i~         |
+| Find note               | ~C-c n f~         |
+| Capture task            | ~C-c c t~         |
+| Capture idea            | ~C-c c i~         |
+| Add meeting             | ~C-c c m~         |
+| Add reading note        | ~C-c c r~         |
+
+* 🗓️ Daily Journaling
+
+- Use ~C-c n j~ every day
+- Files are saved in ~daily/YYYY-MM-DD.org~
+- They have the tag ~:journal:~
+- Add links to concepts with ~org-roam-node-insert~
+
+* 📌 Task Management
+
+Tasks live in ~inbox.org~ under ~* Tasks~. Example:
+
+#+begin_src org
+* TODO Task Name
+  SCHEDULED: <2025-05-01 Thu>
+#+end_src
+
+- Use ~org-agenda~ with ~C-c a a~ for an overview.
+
+* 🔍 Search and Navigation
+
+| Search                    | Command                        |
+|---------------------------+--------------------------------|
+| Search for a note         | ~consult-org-roam~             |
+| Search global content     | ~consult-org-roam-search~      |
+| View backlink buffer      | ~C-c n l~                      |
+
+* 🌐 Graph Visualization
+
+- Command: ~org-roam-ui-mode~
+- Opens in the browser
+- Interactive navigation between notes
+
+* 🧠 Recommended Note Types
+
+Use folders or tags like:
+
+- ~:project:~ for projects
+- ~:people:~ for people
+- ~:idea:~ for abstract concepts
+- ~:reading:~ for readings
+- ~:journal:~ for journaling
+
+* 📎 Example of a Linked Note
+
+#+begin_src org
+#+title: Deep Work
+#+filetags: :reading:focus:
+
+The concept of *deep work* described by Cal Newport [[2025-04-25]]. See also [[Flow State]].
+#+end_src
