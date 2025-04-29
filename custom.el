@@ -32,23 +32,23 @@
 
 ;; --- Org-capture templates ---
 (setq org-capture-templates
-      '(("t" "Task" entry
-         (file+headline (concat org-directory "/inbox.org") "Tasks")
+      `(("t" "Task" entry
+         (file+headline ,(expand-file-name "inbox.org" org-directory) "Tasks")
          "* TODO %?\n  %U\n  %a\n  %i"
          :prepend t)
 
         ("i" "Idea" entry
-         (file+headline (concat org-directory "/inbox.org") "Ideas")
+         (file+headline ,(expand-file-name "inbox.org" org-directory) "Ideas")
          "* %?\n  %U\n  %a\n  %i"
          :prepend t)
 
         ("m" "Meeting" entry
-         (file+datetree  (concat org-directory "/meetings.org"))
+         (file+datetree ,(expand-file-name "meetings.org" org-directory))
          "* MEETING %?\n  %U\n  %a\n"
          :tree-type week)
 
         ("r" "Reading Note" entry
-         (file  (concat org-directory "/reading.org"))
+         (file ,(expand-file-name "reading.org" org-directory))
          "* %^{Titolo} :reading:\n  %U\n  %^{Fonte} \n\n%?"
          :empty-lines 1)))
 
